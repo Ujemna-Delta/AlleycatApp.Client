@@ -20,14 +20,17 @@ jobs:
         with:
           cache: 'npm'
 
-      - name: Install dependencies
-        uses: bahmutov/npm-install@v1
+      - name: Install PNPM
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+          run_install: true
 
       - name: Lint
-        run: npm run lint
+        run: pnpm run lint
 
       - name: Test
-        run: npm run test
+        run: pnpm run test
 
       - name: Build
-        run: npm run build
+        run: pnpm run build
