@@ -1,0 +1,32 @@
+.sidebar-profile {
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 30px 10px 10px;
+    transition: all 250ms ease;
+}
+
+.sidebar-profile-icon {
+    width: 120px;
+    height: 120px;
+    transition: all 250ms ease;
+}
+
+.sidebar-profile-name {
+    padding: 10px;
+    font-size: 24px;
+    text-align: center;
+    transition: all 250ms ease;
+}
+
+.sidebar.close .sidebar-profile-icon {
+    width: 60px;
+    height: 60px;
+}
+
+.sidebar.close .sidebar-profile-name {
+    font-size: 16px;
+}

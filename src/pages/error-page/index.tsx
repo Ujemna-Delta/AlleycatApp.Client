@@ -9,7 +9,7 @@ export default function ErrorPage(): ReactElement {
     let message = undefined;
 
     if (isRouteErrorResponse(error)) {
-        message = `${error.status} = ${error.statusText || error.data}`;
+        message = `${error.status} - ${error.statusText || error.data}`;
     } else if (error !== undefined && error !== null) {
         message = error.toString();
     }

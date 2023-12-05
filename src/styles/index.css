@@ -18,6 +18,7 @@
 
 body {
     margin: 0;
+    overflow: hidden;
     min-width: 320px;
     min-height: 100vh;
 }
@@ -47,4 +48,17 @@ body {
 *::-webkit-scrollbar-thumb {
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 8px;
+}
+
+.content {
+    position: absolute;
+    left: 270px;
+    width: calc(100% - 290px);
+    padding: 10px;
+    transition: all 250ms ease;
+}
+
+.sidebar.close ~ .content {
+    left: 92px;
+    width: calc(100% - 112px);
 }
