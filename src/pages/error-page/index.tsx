@@ -1,10 +1,11 @@
 import {ReactElement} from "react";
-import {isRouteErrorResponse, NavLink, useRouteError} from "react-router-dom";
+import {isRouteErrorResponse, useNavigate, useRouteError} from "react-router-dom";
 import {PrimaryButton} from "@fluentui/react";
 import "./error-page.css";
 
 export default function ErrorPage(): ReactElement {
     const error = useRouteError();
+    const navigate = useNavigate();
     let message = undefined;
 
     if (isRouteErrorResponse(error)) {
@@ -22,9 +23,7 @@ export default function ErrorPage(): ReactElement {
                     <i>{message}</i>
                 </p>
                 <p>
-                    <NavLink to="/">
-                        <PrimaryButton text="Home"/>
-                    </NavLink>
+                    <PrimaryButton text="Home" onClick={() => navigate("/")}/>
                 </p>
             </div>
         );
@@ -35,9 +34,7 @@ export default function ErrorPage(): ReactElement {
             <h1>Oops!</h1>
             <p>Sorry, an unexpected error has occurred.</p>
             <p>
-                <NavLink to="/">
-                    <PrimaryButton text="Home"/>
-                </NavLink>
+                <PrimaryButton text="Home" onClick={() => navigate("/")}/>
             </p>
         </div>
     );
