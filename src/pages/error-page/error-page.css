@@ -1,0 +1,21 @@
+.error-page {
+    display: flex;
+    height: 100vh;
+    overflow: auto;
+    place-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.error-page h1 {
+    font-size: 64px;
+    margin: 0;
+}
+
+.error-page p {
+    margin-bottom: 0;
+}
+
+.error-page p.error-code {
+    color: #333;
+}
