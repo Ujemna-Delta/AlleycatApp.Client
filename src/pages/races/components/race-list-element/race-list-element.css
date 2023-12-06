@@ -1,0 +1,33 @@
+.race-list-element {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 8px 0;
+    padding: 12px;
+    border-radius: 4px;
+    background: #e0e0e0;
+}
+
+.race-list-element-group {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+.race-list-element-group * {
+    padding: 0 8px;
+}
+
+.race-list-element-id {
+    font-weight: bold;
+    font-size: 1.25em;
+    font-family: monospace;
+}
+
+.race-list-element-name {
+    text-transform: capitalize;
+}
+
+.race-list-element-description {
+    color: #555;
+}

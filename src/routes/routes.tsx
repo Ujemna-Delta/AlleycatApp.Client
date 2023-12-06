@@ -1,6 +1,7 @@
 import App from "./app.tsx";
 import ErrorPage from "../pages/error-page";
 import HomeRoute from "./home.tsx";
+import RacesRoute from "./races.tsx";
 
 export const routes = [
     {
@@ -11,6 +12,10 @@ export const routes = [
             {
                 index: true,
                 element: <HomeRoute/>
+            },
+            {
+                path: "/races",
+                element: <RacesRoute/>
             }
         ]
     }
