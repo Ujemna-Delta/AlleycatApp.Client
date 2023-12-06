@@ -7,12 +7,6 @@ export default function App(): ReactElement {
         <>
             <Sidebar/>
             <div className="content">
-                Icons:
-                <a href="https://www.flaticon.com/free-icons/user" title="user icons">User icons created by Freepik -
-                    Flaticon</a>
-
-                <br/>
-                Feather Icons on MIT license from https://github.com/feathericons/feather
                 <Outlet/>
             </div>
         </>
