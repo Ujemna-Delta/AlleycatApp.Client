@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "name": "Sample race 1",
+    "description": "Sample description for race 1",
+    "beginTime": "2023-12-20T00:00:00",
+    "startAddress": "Sample address 1",
+    "valueModifier": 1.40,
+    "isActive": false,
+    "isFreeOrder": false
+  },
+  {
+    "id": 2,
+    "name": "Sample race 2",
+    "description": "Sample description for race 2",
+    "beginTime": "2023-12-07T00:00:00",
+    "startAddress": "Sample address 1",
+    "valueModifier": null,
+    "isActive": true,
+    "isFreeOrder": false
+  },
+  {
+    "id": 3,
+    "name": "Sample race 3",
+    "description": null,
+    "beginTime": "2024-01-07T12:20:00",
+    "startAddress": "Sample address 2",
+    "valueModifier": null,
+    "isActive": false,
+    "isFreeOrder": true
+  },
+  {
+    "id": 4,
+    "name": "Sample race 4",
+    "description": "Sample description 4",
+    "beginTime": "2024-01-08T12:20:00",
+    "startAddress": "Sample address 4",
+    "valueModifier": null,
+    "isActive": false,
+    "isFreeOrder": false
+  },
+  {
+    "id": 5,
+    "name": "Sample race 5",
+    "description": "Sample description 5",
+    "beginTime": "2023-01-18T14:30:00",
+    "startAddress": "Sample address 5",
+    "valueModifier": 3.20,
+    "isActive": false,
+    "isFreeOrder": false
+  }
+]
