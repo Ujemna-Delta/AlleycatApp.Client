@@ -1,8 +1,8 @@
 import Race from "./models/race.ts";
 
-const API: string = "./";
+const API: string = window.location.origin;
 
-export default async function getRaces(): Promise<Race[]> {
+export async function getRaces(): Promise<Race[]> {
     const response = await fetch(API + "/races.json");
     const data: Race[] = await response.json();
 
@@ -11,4 +11,10 @@ export default async function getRaces(): Promise<Race[]> {
     }
 
     return data;
+}
+
+export async function getRace(id: number): Promise<Race | null> {
+    const races = await getRaces();
+    const race = races.filter(r => r.id == id);
+    return race.length ? race[0] : null;
 }

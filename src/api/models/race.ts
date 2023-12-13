@@ -1,5 +1,5 @@
 export default interface Race {
-    id: string;
+    id: number;
     name: string;
     description: string;
     beginTime: Date;

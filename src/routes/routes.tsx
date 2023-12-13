@@ -3,6 +3,7 @@ import ErrorPage from "../pages/error-page";
 import AboutPage from "../pages/about-page";
 import HomeRoute from "./home.tsx";
 import RacesRoute from "./races.tsx";
+import RaceRoute from "./race.tsx";
 
 export const routes = [
     {
@@ -20,7 +21,7 @@ export const routes = [
             },
             {
                 path: "/race/:id",
-                element: <div>RaceId</div>
+                element: <RaceRoute/>
             },
             {
                 path: "/about",

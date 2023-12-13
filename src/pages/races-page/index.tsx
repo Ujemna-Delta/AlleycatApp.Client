@@ -1,10 +1,10 @@
 import {ReactElement, useEffect, useState} from "react";
 import Race from "../../api/models/race.ts";
-import getRaces from "../../api/races.ts";
 import {PrimaryButton} from "@fluentui/react";
 import RacesList from "./components/races-list";
 import "./races-page.css";
 import {NavLink} from "react-router-dom";
+import {getRaces} from "../../api/races.ts";
 
 export default function RacesPage(): ReactElement {
     const [races, setRaces] = useState<Race[]>([]);
