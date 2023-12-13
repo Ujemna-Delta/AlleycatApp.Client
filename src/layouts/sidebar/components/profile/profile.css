@@ -1,0 +1,23 @@
+.sidebar-profile {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    flex-wrap: nowrap;
+    align-items: center;
+
+    padding-bottom: 10px;
+}
+
+.sidebar-profile-icon {
+    width: 60px;
+    height: 60px;
+    margin: 15px 15px 5px;
+}
+
+.sidebar-profile-name {
+    max-width: 90px;
+    padding: 5px;
+    font-size: 12px;
+    text-align: center;
+}

@@ -1,0 +1,19 @@
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 90px;
+    height: 100vh;
+    z-index: 100;
+    box-sizing: border-box;
+    box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.2);
+    background: #ebebeb;
+}
+
+.sidebar-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: calc(100vh - 20px);
+    overflow: hidden;
+}

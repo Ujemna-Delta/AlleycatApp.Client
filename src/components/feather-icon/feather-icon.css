@@ -1,0 +1,9 @@
+.feather {
+    position: relative;
+    top: -0.1em;
+    display: inline-block;
+}
+
+.feather-error {
+    color: #ED5565;
+}
