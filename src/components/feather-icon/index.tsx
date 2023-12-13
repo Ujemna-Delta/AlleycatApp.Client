@@ -14,6 +14,14 @@ export default function FeatherIcon({
                                         className = "",
                                         color = "currentColor"
                                     }: FeatherIconProps): ReactElement {
+    if (icons === undefined) {
+        return (
+            <i className="feather-error">
+                Error
+            </i>
+        )
+    }
+
     if (!icon || !(icon in icons)) {
         icon = "alert-circle";
         color = "#ED5565";
