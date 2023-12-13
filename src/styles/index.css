@@ -23,13 +23,6 @@ body {
     min-height: 100vh;
 }
 
-#content {
-    position: relative;
-    top: 60px;
-    height: calc(100vh - 60px);
-    overflow: hidden;
-}
-
 /* Firefox */
 * {
     scrollbar-width: thin;
@@ -53,6 +46,6 @@ body {
 .content {
     position: absolute;
     left: 90px;
-    width: calc(100% - 110px);
-    padding: 10px;
+    width: calc(100% - 130px);
+    padding: 20px;
 }

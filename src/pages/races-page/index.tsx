@@ -2,6 +2,7 @@ import {ReactElement, useEffect, useState} from "react";
 import Race from "../../api/models/race.ts";
 import getRaces from "../../api/races.ts";
 import {PrimaryButton} from "@fluentui/react";
+import RacesList from "./components/races-list";
 
 export default function RacesPage(): ReactElement {
     const [races, setRaces] = useState<Race[]>([]);
@@ -23,9 +24,7 @@ export default function RacesPage(): ReactElement {
     return (
         <div className="races-page">
             <PrimaryButton text="Refresh" onClick={handleRefresh}/>
-            {races.map(race=>
-                <div>{race.id}</div>
-            )}
+            <RacesList races={races}/>
         </div>
     );
 }
