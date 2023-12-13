@@ -2,6 +2,7 @@ import App from "./app.tsx";
 import ErrorPage from "../pages/error-page";
 import AboutPage from "../pages/about-page";
 import HomeRoute from "./home.tsx";
+import ModifyRacePage from "../pages/modify-race-page";
 
 export const routes = [
     {
@@ -12,6 +13,10 @@ export const routes = [
             {
                 index: true,
                 element: <HomeRoute/>
+            },
+            {
+                path: "/race/new",
+                element: <ModifyRacePage/>
             },
             {
                 path: "/about",
