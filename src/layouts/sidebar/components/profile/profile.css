@@ -1,32 +1,23 @@
 .sidebar-profile {
-    height: 180px;
+    cursor: pointer;
     display: flex;
     flex-direction: column;
     align-content: center;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     align-items: center;
-    padding: 30px 10px 10px;
-    transition: all 250ms ease;
+
+    padding-bottom: 10px;
 }
 
 .sidebar-profile-icon {
-    width: 120px;
-    height: 120px;
-    transition: all 250ms ease;
+    width: 60px;
+    height: 60px;
+    margin: 15px 15px 5px;
 }
 
 .sidebar-profile-name {
-    padding: 10px;
-    font-size: 24px;
+    max-width: 90px;
+    padding: 5px;
+    font-size: 12px;
     text-align: center;
-    transition: all 250ms ease;
-}
-
-.sidebar.close .sidebar-profile-icon {
-    width: 60px;
-    height: 60px;
-}
-
-.sidebar.close .sidebar-profile-name {
-    font-size: 16px;
 }

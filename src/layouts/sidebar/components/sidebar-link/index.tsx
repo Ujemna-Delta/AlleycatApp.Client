@@ -8,7 +8,7 @@ interface SidebarLinkProps {
     icon: ReactElement;
 }
 
-export default function SidebarLink({ to, text, icon }:SidebarLinkProps): ReactElement {
+export default function SidebarLink({to, text, icon}: SidebarLinkProps): ReactElement {
     const navigate = useNavigate();
 
     const handleClick = () => {

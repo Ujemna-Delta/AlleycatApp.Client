@@ -7,7 +7,7 @@
 
     color-scheme: dark;
     color: #101010;
-    background-color: #eeeeee;
+    background-color: #f0f0f0;
 
     font-synthesis: none;
     text-rendering: optimizeLegibility;
@@ -52,13 +52,7 @@ body {
 
 .content {
     position: absolute;
-    left: 270px;
-    width: calc(100% - 290px);
+    left: 90px;
+    width: calc(100% - 110px);
     padding: 10px;
-    transition: all 250ms ease;
-}
-
-.sidebar.close ~ .content {
-    left: 92px;
-    width: calc(100% - 112px);
 }
