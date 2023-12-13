@@ -9,7 +9,7 @@ export default function Sidebar(): ReactElement {
         <div className="sidebar">
             <div className="sidebar-content">
                 <div className="sidebar-content-group">
-                    <Profile name="Vicent Seppel"/>
+                    <Profile name="VeloVirtuoso"/>
                     <SidebarLink to="/" text="Home" icon={<FeatherIcon icon="home"/>}/>
                     <SidebarLink to="/races" text="Races" icon={<FeatherIcon icon="calendar"/>}/>
                     <SidebarLink to="/seasons" text="Seasons" icon={<FeatherIcon icon="bar-chart-2"/>}/>

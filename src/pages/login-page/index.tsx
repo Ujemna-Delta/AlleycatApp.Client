@@ -17,7 +17,7 @@ export default function LoginPage(): ReactElement {
                     Login
                 </div>
 
-                <form className="login-form" onSubmit={handleSubmit}>
+                <form className="login-form" onSubmit={handleSubmit} autoComplete="off">
                     <input type="text" name="login" placeholder="Login"/>
                     <input type="password" name="password" placeholder="Password"/>
                     <input type="submit" name="submit" value="Login"/>
