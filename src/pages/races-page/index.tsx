@@ -3,6 +3,8 @@ import Race from "../../api/models/race.ts";
 import getRaces from "../../api/races.ts";
 import {PrimaryButton} from "@fluentui/react";
 import RacesList from "./components/races-list";
+import "./races-page.css";
+import {NavLink} from "react-router-dom";
 
 export default function RacesPage(): ReactElement {
     const [races, setRaces] = useState<Race[]>([]);
@@ -23,7 +25,12 @@ export default function RacesPage(): ReactElement {
 
     return (
         <div className="races-page">
-            <PrimaryButton text="Refresh" onClick={handleRefresh}/>
+            <div className="races-page-controls">
+                <NavLink to="./new">
+                    <PrimaryButton text="New"/>
+                </NavLink>
+                <PrimaryButton text="Refresh" onClick={handleRefresh}/>
+            </div>
             <RacesList races={races}/>
         </div>
     );
