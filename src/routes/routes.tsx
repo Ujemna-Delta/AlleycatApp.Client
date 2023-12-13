@@ -2,7 +2,6 @@ import App from "./app.tsx";
 import ErrorPage from "../pages/error-page";
 import AboutPage from "../pages/about-page";
 import HomeRoute from "./home.tsx";
-import LoginRoute from "./login.tsx";
 
 export const routes = [
     {
@@ -15,9 +14,17 @@ export const routes = [
                 element: <HomeRoute/>
             },
             {
+                path: "/races",
+                element: <RacesRoute/>
+            },
+            {
+                path: "/race/:id",
+                element: <RaceRoute/>
+            },
+            {
                 path: "/about",
                 element: <AboutPage/>
-            }
+            },
         ]
     },
     {

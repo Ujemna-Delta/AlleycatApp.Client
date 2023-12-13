@@ -20,6 +20,9 @@ export default function AboutPage(): ReactElement {
                     <a href="https://www.flaticon.com/free-icons/user" title="user icons">User icons created by Freepik
                         - Flaticon</a>
                 </li>
+                <li>
+                    Image by <a href="https://www.freepik.com/free-vector/flat-design-bike-race-illustration_28554006.htm">Freepik</a>
+                </li>
             </ul>
 
         </div>
