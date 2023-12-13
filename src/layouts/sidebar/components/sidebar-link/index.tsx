@@ -1,6 +1,6 @@
 import {ReactElement} from "react";
 import "./sidebar-link.css";
-import {useNavigate} from "react-router-dom";
+import {NavLink} from "react-router-dom";
 
 interface SidebarLinkProps {
     to: string;
@@ -9,16 +9,10 @@ interface SidebarLinkProps {
 }
 
 export default function SidebarLink({to, text, icon}: SidebarLinkProps): ReactElement {
-    const navigate = useNavigate();
-
-    const handleClick = () => {
-        navigate(to);
-    }
-
     return (
-        <div className="sidebar-link" onClick={handleClick}>
+        <NavLink className="sidebar-link" to={to}>
             <div className="sidebar-link-icon">{icon}</div>
             <div className="sidebar-link-text">{text}</div>
-        </div>
+        </NavLink>
     );
 }
