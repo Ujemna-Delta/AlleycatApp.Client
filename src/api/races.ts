@@ -1,9 +1,9 @@
 import Race from "./models/race.ts";
 
-const API: string = window.location.origin;
+const API: string = "https://alleycatapp-persistence.azurewebsites.net/api";
 
 export async function getRaces(): Promise<Race[]> {
-    const response = await fetch(API + "/races.json");
+    const response = await fetch(API + "/races");
     const data: Race[] = await response.json();
 
     for (const race of data) {
