@@ -37,7 +37,7 @@
     flex-direction: column;
 }
 
-input {
+.login-form input {
     padding: 8px 24px;
     margin: 16px;
     border: 1px solid black;
@@ -49,11 +49,11 @@ input {
     background: inherit;
 }
 
-input:focus {
+.login-form input:focus {
     outline: 5px solid #c9d6ff;
 }
 
-input[type=submit] {
+.login-form input[type=submit] {
     cursor: pointer;
     color: white;
     background: black;
