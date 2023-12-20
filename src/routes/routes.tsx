@@ -15,7 +15,7 @@ export const routes = [
                 element: <HomeRoute/>
             },
             {
-                path: "/race/new",
+                path: "/races/new",
                 element: <ModifyRacePage/>
             },
             {
