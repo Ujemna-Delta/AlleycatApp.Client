@@ -76,17 +76,21 @@ export default function ModifyRacePage(): ReactElement {
 
     const handleSubmit = async (event: React.FormEvent) => {
         event.preventDefault()
+
+        let success: boolean = true;
+
         setLoading(true);
         try {
             await addRace(state);
         } catch (error: unknown) {
             if (error instanceof Error) {
+                success = false;
                 setError(error.message)
             }
         }
         setLoading(false);
 
-        if (error == null) {
+        if (success) {
             navigate("/races");
         }
     }
