@@ -1,0 +1,14 @@
+.races-page-controls {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.races-page-controls > * {
+    margin: 0 8px;
+}
+
+.races-page-controls .feather {
+    top: 0;
+    margin-right: 8px;
+}

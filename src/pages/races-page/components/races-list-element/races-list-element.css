@@ -1,0 +1,42 @@
+.races-list-element {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    margin: 10px 0;
+    box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.races-list-element-group {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: flex-start;
+}
+
+.races-list-element-summary * {
+    padding: 0 8px;
+    display: flex;
+    align-content: center;
+    align-items: center;
+}
+
+.races-list-element-id {
+    font-weight: bold;
+    font-size: 1.25em;
+    font-family: monospace;
+}
+
+.races-list-element-name {
+    width: 300px;
+    text-transform: capitalize;
+}
+
+.races-list-element-date {;
+    width: 250px;
+}
+
+.races-list-element-date .feather {
+    top: 0;
+}
