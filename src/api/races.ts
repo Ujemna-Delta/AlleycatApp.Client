@@ -16,7 +16,7 @@ export async function addRace(raceForm: RaceForm): Promise<Race> {
     }
 
     const response = await fetch(API + "/races", {
-        method: "PUT",
+        method: "POST",
         headers: {
             "Content-Type": "application/json",
             "Access-Control-Allow-Origin": "false"
