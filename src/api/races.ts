@@ -21,6 +21,17 @@ export async function getRace(id: number): Promise<Race | null> {
     return race.length ? race[0] : null;
 }
 
+export async function getUpcomingRaces(): Promise<Race[]> {
+    let allRaces = await getRaces();
+
+    const currentDate = new Date();
+
+    return allRaces
+        .filter(race => new Date(race.beginTime) > currentDate)
+        .sort((a, b) => new Date(a.beginTime).getTime() - new Date(b.beginTime).getTime())
+        .slice(0, 5);
+}
+
 export async function addRace(raceForm: RaceForm): Promise<Race> {
     const race = {
         name: raceForm.name,

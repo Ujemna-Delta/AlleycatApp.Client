@@ -1,0 +1,77 @@
+.info-table {
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
+}
+
+.info-image {
+    width: 100px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.info-content {
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.info-title-date {
+    flex-basis: 30%;
+    flex-shrink: 0;
+}
+
+
+.info-time {
+    flex-basis: 15%;
+    flex-shrink: 0;
+}
+
+.info-description {
+    flex-basis: 50%;
+    margin-left: 10px;
+}
+
+.info-title {
+    margin: 0 0 5px 0;
+    font-size: 16px;
+    color: #333;
+}
+
+.info-date {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.info-description-text {
+    padding-left: 15px;
+    font-size: 14px;
+    color: #666;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Limits the number of lines */
+    -webkit-box-orient: vertical;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.info-item.expanded .info-description-text {
+    -webkit-line-clamp: none;
+    overflow: visible;
+}
