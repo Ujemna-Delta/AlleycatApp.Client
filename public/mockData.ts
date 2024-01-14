@@ -1,31 +1,31 @@
 export const newsData = [
     {
-        title: "News Item 1",
+        title: "Zwycięstwo w Międzynarodowych Zawodach Rowerowych",
         date: "2024-01-11T15:45:00",
-        description: "Short description for News Item 1",
-        imageUrl: "./event_img.png"
+        description: "Polski kolarz, Tomasz Nowak, zdobył złoty medal w prestiżowych międzynarodowych zawodach rowerowych, wyprzedzając swoich rywali w dramatycznym finiszu. Jego zwycięstwo nie tylko podkreśla rosnącą siłę polskiego kolarstwa na arenie międzynarodowej, ale także stanowi inspirację dla młodych sportowców w Polsce.",
+        imageUrl: "./news1.png"
     },
     {
-        title: "News Item 2",
+        title: "Nowy Rekord Trasy w Wyścigu Kolarskim",
         date: "2024-01-13T16:00:00",
-        description: "Short description for News Item 2 dasf af asd fasfasdf asdf adsfasf dsaa fasdf sdaf sda fsadf sadf sdaf asf asdfas fas fasf ad fasd fas fajfha fhajsfh sajdkf jasdhf jasdkhfkjsadhf asdjfh sadjf hsadjfh sdajkfh asjkfh asjfhsad jdfhsa jfas ajsfh asjfhasjfh sjkhf sajkhfajskhfsajk",
-        imageUrl: "./news_img.png"
+        description: "Agnieszka Kowalska, znana polska kolarzka, ustanowiła nowy rekord trasy podczas krajowego wyścigu rowerowego. Jej niesamowita prędkość i wytrzymałość zaskoczyła zarówno widzów, jak i konkurentów, umacniając jej pozycję jako jednej z czołowych postaci w polskim kolarstwie.",
+        imageUrl: "./news2.png"
     },
     // ... more news items
 ];
 
 export const upcomingEventsData = [
     {
-        name: "Event 1",
+        name: "Otwarcie Sezonu Kolarskiego",
         date: "2024-05-01",
-        description: "is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets c",
-        imageUrl: "./news_img.png"
+        description: "Uroczyste otwarcie sezonu kolarskiego w Polsce miało miejsce tego weekendu, przyciągając tłumy entuzjastów rowerowych. Event charakteryzował się paradą rowerową, pokazami umiejętności oraz serią inspirujących przemówień znanych osobistości ze świata sportu.",
+        imageUrl: "./event1.png"
     },
     {
-        name: "Event 2",
-        date: "2024-06-15",
-        description: "Short description for Event 2",
-        imageUrl: "./event_img.png"
+        name: "Inauguracja Ligi Kolarskiej",
+        date: "2024-02-15",
+        description: "Inauguracja nowej ligi kolarskiej w Polsce odbyła się z wielkim rozmachem, zgromadzając czołowych kolarzy, trenerów oraz entuzjastów sportu z całego kraju. Wydarzenie to było świętem kolarstwa, oferując ekscytujące wyścigi demonstracyjne, warsztaty z udziałem profesjonalistów oraz serię inspirujących wystąpień. Inauguracja lustruje rozwój i popularność kolarstwa w Polsce, stając się ważnym punktem w kalendarzu sportowym kraju.",
+        imageUrl: "./event2.png"
     },
     // ... more events
 ];

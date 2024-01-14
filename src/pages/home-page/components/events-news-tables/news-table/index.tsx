@@ -44,7 +44,10 @@ export default function NewsTable(): ReactElement {
                 >
                     <img src={item.imageUrl} alt={item.title} className="info-image" />
                     <div className="info-content">
+                        <div className="info-title-date">
+                            <h3 className="info-title">{item.title}</h3>
                             <span className="info-time">{timeElapsed[index]}</span>
+                        </div>
                         <p className="info-description-text">{item.description}</p>
                     </div>
                 </div>

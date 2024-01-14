@@ -2,8 +2,8 @@ import Race from "./models/race.ts";
 import {RaceForm} from "./models/race-form.ts";
 import {mergeDate} from "../utils/mergeDate.ts";
 
-// const API: string = "https://alleycatapp-persistence.azurewebsites.net/api";
-const API: string = "http://localhost:8000/api";
+const API: string = "https://alleycatapp-persistence.azurewebsites.net/api";
+//const API: string = "http://localhost:8000/api";
 
 export async function getRaces(): Promise<Race[]> {
     const response = await fetch(API + "/races");
