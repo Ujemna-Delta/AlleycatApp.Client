@@ -1,0 +1,32 @@
+@keyframes loading-icon-animation {
+    0% {
+        transform: rotateZ(0deg);
+    }
+    100% {
+        transform: rotateZ(360deg);
+    }
+}
+
+.loading-icon-container {
+    display: inline-block;
+    width: 24px;
+    height: 100%;
+}
+
+.loading-icon {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.loading-icon-inner {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 2px solid white;
+    border-top-color: transparent !important;
+    border-bottom-color: transparent !important;
+    border-radius: 24px;
+    animation: loading-icon-animation 2s linear 0s infinite normal;
+}

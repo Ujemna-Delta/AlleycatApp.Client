@@ -37,7 +37,8 @@
     flex-direction: column;
 }
 
-.login-form input {
+.login-form input,
+.login-form button {
     padding: 8px 24px;
     margin: 16px;
     border: 1px solid black;
@@ -49,14 +50,20 @@
     background: inherit;
 }
 
-.login-form input:focus {
+.login-form input:focus,
+.login-form button:focus {
     outline: 5px solid #c9d6ff;
 }
 
-.login-form input[type=submit] {
+.login-form button[type=submit] {
     cursor: pointer;
     color: white;
     background: black;
+}
+
+.login-form button[disabled] {
+    cursor: wait;
+    background: #333;
 }
 
 .login-change-form {

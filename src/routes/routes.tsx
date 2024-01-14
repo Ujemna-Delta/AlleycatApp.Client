@@ -6,6 +6,7 @@ import ModifyRacePage from "../pages/modify-race-page";
 import RacesRoute from "./races.tsx";
 import RaceRoute from "./race.tsx";
 import LoginRoute from "./login.tsx";
+import LogoutRoute from "./logout.tsx";
 
 export const routes = [
     {
@@ -38,5 +39,9 @@ export const routes = [
     {
         path: "/login",
         element: <LoginRoute/>
+    },
+    {
+        path: "/logout",
+        element: <LogoutRoute/>
     }
 ];
