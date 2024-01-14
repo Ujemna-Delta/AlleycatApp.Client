@@ -9,11 +9,11 @@ export default function NewsTable(): ReactElement {
     // Calculate the time elapsed for each news item
     useEffect(() => {
         const calculateTimeElapsed = () => {
-            const currentTime = new Date().getTime(); // Get current time in milliseconds
+            const currentTime = new Date().getTime();
             const elapsedTimes = newsData.map((item) => {
-                const postedTime = new Date(item.date).getTime(); // Get posted time in milliseconds
+                const postedTime = new Date(item.date).getTime();
                 const timeDifference = currentTime - postedTime;
-                if (timeDifference < 60 * 60 * 1000) { // Less than 1 hour
+                if (timeDifference < 60 * 60 * 1000) {
                     return "now";
                 }
                 const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
