@@ -15,7 +15,7 @@ interface AuthState {
     userName: () => string;
 }
 
-export const useAuthStore = create<AuthState>()((set, get) => ({
+export const useAuthStore = create<AuthState>((set, get) => ({
     token: localStorage.getItem($LOCAL_TOKEN) || undefined,
     logout: () =>
         set(() => {
@@ -39,6 +39,8 @@ export const useAuthStore = create<AuthState>()((set, get) => ({
     }
 }));
 
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
 export const useAuthRequest = leitenRequest(useAuthStore, "token", async (form: IAuthForm) => {
     const response = await fetch("/api/users/Session", {
         method: "POST",
