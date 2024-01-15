@@ -20,7 +20,7 @@ export async function getRace(id: number): Promise<Race | null> {
 }
 
 export async function getUpcomingRaces(): Promise<Race[]> {
-    let allRaces = await getRaces();
+    const allRaces = await getRaces();
 
     const currentDate = new Date();
 

@@ -2,6 +2,7 @@ import User from "./models/user.ts";
 import UserLeagueScore from "./models/user-league-score.ts";
 import League from "./models/league.ts";
 import {LeagueForm} from "./models/league-form.ts";
+import LeaderboardEntry from "./models/leaderboard.ts";
 
 export async function getUsers(): Promise<User[]> {
     const response = await fetch("/api/users");
@@ -66,8 +67,7 @@ export async function getLeaderboardData() {
         leaguesMap[league.id] = league;
     }
 
-
-    const leaderboardDataByLeague: { [key: string]: { leagueName: string; leaderboard: any[] } } = {};
+    const leaderboardDataByLeague: { [key: string]: { leagueName: string; leaderboard: LeaderboardEntry[] } } = {};
 
     for (const score of scores) {
         const user = usersMap[score.attendeeId];

@@ -12,14 +12,15 @@ export default function RacePage(): ReactElement {
     const parameters = useParams<RacePageParameters>();
     const [race, setRace] = useState<Race | null>(null);
 
-    const fetchRace = async () => {
-        const race = await getRace(parseInt(parameters.id as string));
-        return setRace(race);
-    }
 
     useEffect(() => {
+        const fetchRace = async () => {
+            const race = await getRace(parseInt(parameters.id as string));
+            return setRace(race);
+        }
+
         fetchRace();
-    }, []);
+    }, [parameters.id]);
 
     if (race == null) {
         return <div>

@@ -12,14 +12,14 @@ export default function LeaguePage(): ReactElement {
     const parameters = useParams<LeaguePageParameters>();
     const [league, setLeague] = useState<League | null>(null);
 
-    const fetchLeague = async () => {
-        const league = await getLeague(parseInt(parameters.id as string));
-        return setLeague(league);
-    }
-
     useEffect(() => {
+        const fetchLeague = async () => {
+            const league = await getLeague(parseInt(parameters.id as string));
+            return setLeague(league);
+        }
+
         fetchLeague();
-    }, []);
+    }, [parameters.id]);
 
     if (league == null) {
         return <div>
