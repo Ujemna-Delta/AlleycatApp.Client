@@ -3,6 +3,7 @@ import {RaceForm} from "./models/race-form.ts";
 import {mergeDate} from "../utils/mergeDate.ts";
 
 const API: string = "https://alleycatapp-persistence.azurewebsites.net/api";
+//const API: string = "http://localhost:8000/api";
 
 export async function getRaces(): Promise<Race[]> {
     const response = await fetch(API + "/races");
@@ -19,6 +20,17 @@ export async function getRace(id: number): Promise<Race | null> {
     const races = await getRaces();
     const race = races.filter(r => r.id == id);
     return race.length ? race[0] : null;
+}
+
+export async function getUpcomingRaces(): Promise<Race[]> {
+    let allRaces = await getRaces();
+
+    const currentDate = new Date();
+
+    return allRaces
+        .filter(race => new Date(race.beginTime) > currentDate)
+        .sort((a, b) => new Date(a.beginTime).getTime() - new Date(b.beginTime).getTime())
+        .slice(0, 5);
 }
 
 export async function addRace(raceForm: RaceForm): Promise<Race> {

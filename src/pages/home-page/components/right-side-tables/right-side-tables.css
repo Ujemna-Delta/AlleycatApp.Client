@@ -1,0 +1,103 @@
+.general-container {
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-left: auto;
+    margin-bottom: 20px;
+    align-self: flex-end;
+    flex-direction: column;
+    min-width: 60%;
+
+}
+
+.general-container h2 {
+    text-align: left;
+    color: #333;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+/* General header style */
+.general-header {
+    display: flex;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+.general-header span {
+    font-weight: bold;
+    color: #333;
+    text-align: left;
+    padding-right: 10px;
+}
+
+/* Adjustments for the flex columns - can be customized per component */
+.flex-column {
+    text-align: left;
+    font-size: 14px;
+    color: #666;
+    white-space: normal;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Adjust the width of each column */
+.flex-column.small { width: 15%; margin-right: 1%; }
+.flex-column.medium { width: 25%; margin-right: 4%; }
+.flex-column.large { width: 31%; }
+.flex-column.xlarge { width: 20%; margin-right: 4%; }
+
+/* Item style for each row */
+.general-item {
+    display: flex;
+    border-bottom: 1px solid #ddd;
+    padding: 5px 0;
+    position: relative;
+}
+
+.general-item span {
+    text-align: left;
+    font-size: 14px;
+    color: #666;
+    white-space: normal;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Expanded description */
+.general-item.expanded span {
+    -webkit-line-clamp: none;
+    cursor: default;
+}
+
+.leaderboard-rank, .leaderboard-participant, .leaderboard-points {
+    text-align: left;
+    font-size: 14px;
+    color: #666;
+    white-space: normal;
+    cursor: pointer;
+    width: 80%;
+}
+
+.leaderboard-rank {
+    width: 20%;
+}
+
+.leaderboard-participant {
+    width: 60%;
+}
+
+.leaderboard-points {
+    width: 30%;
+}

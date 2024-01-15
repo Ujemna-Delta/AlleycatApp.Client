@@ -1,0 +1,23 @@
+/* General styles for the home page */
+.home-page {
+    display: flex;
+    justify-content: space-between;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    margin: auto;
+}
+
+.left-side-tables {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+}
+
+.right-side-tables {
+    /* Styles for the right side tables */
+    width: 60%; /* Adjust based on your design */
+    margin-left: 20px; /* Space between the tables and the main content */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* Align tables to the right */
+}
