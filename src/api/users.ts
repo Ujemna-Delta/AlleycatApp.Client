@@ -3,22 +3,18 @@ import UserLeagueScore from "./models/user-league-score.ts";
 import League from "./models/league.ts";
 import {LeagueForm} from "./models/league-form.ts";
 
-
-const API: string = "https://alleycatapp-persistence.azurewebsites.net/api";
-//const API: string = "http://localhost:8000/api";
-
 export async function getUsers(): Promise<User[]> {
-    const response = await fetch(API + "/users");
+    const response = await fetch("/api/users");
     return await response.json();
 }
 
 export async function getUsersLeagueScores(): Promise<UserLeagueScore[]> {
-    const response = await fetch(API+"/Leagues/scores");
+    const response = await fetch("/api/Leagues/scores");
     return await response.json()
 }
 
 export async function getLeagues(): Promise<League[]> {
-    const response = await fetch(API+"/Leagues");
+    const response = await fetch("/api/Leagues");
     return await response.json()
 }
 
@@ -34,7 +30,7 @@ export async function addLeague(leagueForm: LeagueForm): Promise<League> {
         description: leagueForm.description,
     }
 
-    const response = await fetch(API + "/Leagues", {
+    const response = await fetch("/api/Leagues", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",

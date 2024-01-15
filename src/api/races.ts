@@ -2,11 +2,8 @@ import Race from "./models/race.ts";
 import {RaceForm} from "./models/race-form.ts";
 import {mergeDate} from "../utils/mergeDate.ts";
 
-const API: string = "https://alleycatapp-persistence.azurewebsites.net/api";
-//const API: string = "http://localhost:8000/api";
-
 export async function getRaces(): Promise<Race[]> {
-    const response = await fetch(API + "/races");
+    const response = await fetch("/api/Races");
     const data: Race[] = await response.json();
 
     for (const race of data) {
@@ -44,7 +41,7 @@ export async function addRace(raceForm: RaceForm): Promise<Race> {
         isFreeOrder: raceForm.isFreeOrder
     }
 
-    const response = await fetch(API + "/races", {
+    const response = await fetch("/api/Races", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",

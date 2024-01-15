@@ -6,6 +6,7 @@ import ModifyRacePage from "../pages/modify-race-page";
 import RacesRoute from "./races.tsx";
 import RaceRoute from "./race.tsx";
 import LoginRoute from "./login.tsx";
+import LogoutRoute from "./logout.tsx";
 import SeasonsRoute from "./seasons.tsx";
 import SeasonRoute from "./season.tsx";
 import ModifyLeaguePage from "../pages/modify-league-page";
