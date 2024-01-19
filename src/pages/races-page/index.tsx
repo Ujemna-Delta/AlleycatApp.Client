@@ -5,6 +5,8 @@ import RacesList from "./components/races-list";
 import "./races-page.css";
 import {NavLink} from "react-router-dom";
 import {getRaces} from "../../api/races.ts";
+import ProtectedView from "../../components/protected-view";
+import {ERole} from "../../components/protected-view/role.ts";
 
 export default function RacesPage(): ReactElement {
     const [races, setRaces] = useState<Race[]>([]);
@@ -26,9 +28,11 @@ export default function RacesPage(): ReactElement {
     return (
         <div className="races-page">
             <div className="races-page-controls">
-                <NavLink to="./new">
-                    <PrimaryButton text="New"/>
-                </NavLink>
+                <ProtectedView role={ERole.Manager}>
+                    <NavLink to="./new">
+                        <PrimaryButton text="New"/>
+                    </NavLink>
+                </ProtectedView>
                 <PrimaryButton text="Refresh" onClick={handleRefresh}/>
             </div>
             <RacesList races={races}/>

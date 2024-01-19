@@ -7,12 +7,15 @@ const $LOCAL_TOKEN = "token";
 
 interface IToken {
     unique_name: string;
+    role: string;
 }
 
 interface AuthState {
     token: string | undefined;
     logout: () => void;
     userName: () => string;
+    getDecoded: () => IToken | undefined;
+    getRole: () => string | undefined;
 }
 
 export const useAuthStore = create<AuthState>((set, get) => ({
@@ -36,6 +39,30 @@ export const useAuthStore = create<AuthState>((set, get) => ({
         }
 
         return decoded.unique_name;
+    },
+    getDecoded: () => {
+        const token = get().token;
+
+        if (token === undefined) {
+            return undefined;
+        }
+
+        const decoded = decodeToken<IToken>(token);
+
+        if (decoded == null) {
+            return undefined;
+        }
+
+        return decoded;
+    },
+    getRole: () => {
+        const decoded = get().getDecoded();
+
+        if (decoded === undefined) {
+            return undefined;
+        }
+
+        return decoded.role;
     }
 }));
 
