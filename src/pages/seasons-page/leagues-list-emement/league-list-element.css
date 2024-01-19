@@ -1,0 +1,42 @@
+.league-list-element {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    margin: 10px 0;
+    box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.league-list-element-group {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: flex-start;
+}
+
+.league-list-element-summary * {
+    padding: 0 8px;
+    display: flex;
+    align-content: center;
+    align-items: center;
+}
+
+.league-list-element-id {
+    font-weight: bold;
+    font-size: 1.25em;
+    font-family: monospace;
+}
+
+.league-list-element-name {
+    width: 300px;
+    text-transform: capitalize;
+}
+
+.league-list-element-date {;
+    width: 250px;
+}
+
+.league-list-element-date .feather {
+    top: 0;
+}

@@ -1,0 +1,38 @@
+.race-page {
+    box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.3);
+}
+
+.race-page-background {
+    width: 100%;
+    height: 250px;
+    background: url("./../race.jpg");
+    background-size: contain;
+}
+
+.race-page-content {
+    padding: 0 25px 50px;
+}
+
+.race-page-name {
+    position: relative;
+    width: fit-content;
+    padding: 20px 0;
+    margin-bottom: 20px;
+    font-size: 40px;
+}
+
+.race-page-name::after {
+    content: " ";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #ccc;
+}
+
+.race-page-description {
+    color: #555;
+    font-size: 16px;
+    max-width: 1000px;
+}

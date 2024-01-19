@@ -20,7 +20,7 @@
     height: 80%;
     margin: 10% 0;
     border-radius: 0 5px 5px 0;
-    background: #2e86de;
+    background: #668aff;
     transition: all 250ms ease;
 }
 
@@ -35,7 +35,7 @@
 }
 
 .sidebar-link.active {
-    color: #2e86de;
+    color: #668aff;
 }
 
 .sidebar-link-icon {

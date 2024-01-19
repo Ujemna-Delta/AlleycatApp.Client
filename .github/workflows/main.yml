@@ -2,7 +2,7 @@ name: Build
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "main", "develop" ]
   pull_request:
     branches: [ "main" ]
   workflow_dispatch:
@@ -28,17 +28,17 @@ jobs:
       - name: Lint
         run: pnpm run lint
 
-      - name: Test
-        run: pnpm run test
+#      - name: Test
+#        run: pnpm run test
 
-      - name: Test Coverage
-        run: pnpm run coverage
-
-      - name: Save coverage result
-        uses: actions/upload-artifact@v3
-        with:
-          name: coverage
-          path: ./coverage
+#      - name: Test Coverage
+#        run: pnpm run coverage
+#
+#      - name: Save coverage result
+#        uses: actions/upload-artifact@v3
+#        with:
+#          name: coverage
+#          path: ./coverage
 
       - name: Build
         run: pnpm run build

@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Teko:wght@400&display=swap');
+
+.login-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Teko', sans-serif;
+    background: #c9d6ff;
+    background: -webkit-linear-gradient(to right, #c9d6ff, #e2e2e2);
+    background: linear-gradient(to right, #c9d6ff, #e2e2e2);
+}
+
+.login-page-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 400px;
+    height: 500px;
+    padding: 20px;
+    border-radius: 8px;
+    box-sizing: border-box;
+    box-shadow: 0 0 15px 10px rgba(201, 214, 255, 0.5);
+    font-size: 24px;
+    background: #ebebeb;
+}
+
+.login-page-title {
+    font-size: 48px;
+    font-weight: bold;
+    padding: 20px;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-form input,
+.login-form button {
+    padding: 8px 24px;
+    margin: 16px;
+    border: 1px solid black;
+    border-radius: 32px;
+    outline: none;
+    color: inherit;
+    font-size: inherit;
+    font-family: inherit;
+    background: inherit;
+}
+
+.login-form input:focus,
+.login-form button:focus {
+    outline: 5px solid #c9d6ff;
+}
+
+.login-form button[type=submit] {
+    cursor: pointer;
+    color: white;
+    background: black;
+}
+
+.login-form button[disabled] {
+    cursor: wait;
+    background: #333;
+}
+
+.login-change-form {
+    margin-top: 16px;
+    text-align: center;
+    color: inherit;
+    font-size: 0.8em;
+    text-decoration: inherit;
+}

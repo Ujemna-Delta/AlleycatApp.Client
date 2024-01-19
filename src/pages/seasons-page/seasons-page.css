@@ -1,0 +1,14 @@
+.leagues-page-controls {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.leagues-page-controls > * {
+    margin: 0 8px;
+}
+
+.leagues-page-controls .feather {
+    top: 0;
+    margin-right: 8px;
+}
