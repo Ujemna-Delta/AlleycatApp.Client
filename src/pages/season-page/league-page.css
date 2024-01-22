@@ -1,38 +1,74 @@
 .league-page {
     box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.3);
+    background: #fff;
+    max-width: 80%;
+    margin: 0 auto;
+    overflow: hidden;
 }
 
 .league-page-background {
     width: 100%;
     height: 250px;
-    background: url("./../league.png");
-    background-size: contain;
+    background: url("./../league.png") no-repeat center center;
+    background-size: cover;
 }
 
 .league-page-content {
-    padding: 0 25px 50px;
+    padding: 20px 40px;
 }
 
 .league-page-name {
     position: relative;
-    width: fit-content;
+    width: 100%;
     padding: 20px 0;
     margin-bottom: 20px;
     font-size: 40px;
+    text-align: center;
 }
 
 .league-page-name::after {
     content: " ";
     position: absolute;
     bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background: #ccc;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50%;
+    height: 3px;
+    background: #007bff;
 }
 
 .league-page-description {
-    color: #555;
-    font-size: 16px;
+    color: #333;
+    font-size: 18px;
     max-width: 1000px;
+    margin: 0 auto 30px;
+    text-align: justify;
+}
+
+.league-page-details {
+    font-size: 16px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.league-detail {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+    line-height: 1.4;
+}
+
+.league-detail-key {
+    font-weight: bold;
+    color: #007bff;
+    margin-right: 10px;
+    white-space: nowrap;
+}
+
+.league-detail-value {
+    text-align: right;
+    flex-grow: 1;
 }

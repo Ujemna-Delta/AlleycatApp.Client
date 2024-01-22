@@ -1,6 +1,7 @@
 import Race from "./models/race.ts";
 import {RaceForm} from "./models/race-form.ts";
 import {mergeDate} from "../utils/mergeDate.ts";
+import User from "./models/user.ts";
 
 export async function getRaces(): Promise<Race[]> {
     const response = await fetch("/api/Races");
@@ -8,15 +9,35 @@ export async function getRaces(): Promise<Race[]> {
 
     for (const race of data) {
         race.beginTime = new Date(race.beginTime);
+        race.attendeesCount = await getRaceAttendeesCount(race.id)
     }
 
     return data;
 }
 
+export async function getRaceAttendees(id: number): Promise<User[]| null> {
+    const response = await fetch(`/api/Races/attendances/race/${id}`);
+    return await response.json();
+}
+
+export async function getRaceAttendeesCount(id: number): Promise<number> {
+    const response = await fetch(`/api/Races/attendances/race/count/${id}`);
+    return await response.json();
+}
+
 export async function getRace(id: number): Promise<Race | null> {
-    const races = await getRaces();
-    const race = races.filter(r => r.id == id);
-    return race.length ? race[0] : null;
+    const race_t = await fetch(`/api/Races/${id}`);
+    const users = await  getRaceAttendees(id)
+    const usersCount = await  getRaceAttendeesCount(id)
+    const race: Race = await race_t.json();
+    if (race) {
+        return {
+            ...race,
+            attendees: users,
+            attendeesCount: usersCount
+        };
+    }
+    return null;
 }
 
 export async function getUpcomingRaces(): Promise<Race[]> {
@@ -38,7 +59,8 @@ export async function addRace(raceForm: RaceForm): Promise<Race> {
         startAddress: raceForm.startAddress,
         valueModifier: raceForm.valueModifier,
         isActive: raceForm.isActive,
-        isFreeOrder: raceForm.isFreeOrder
+        isFreeOrder: raceForm.isFreeOrder,
+        leagueId: raceForm.leagueId
     }
 
     const response = await fetch("/api/Races", {

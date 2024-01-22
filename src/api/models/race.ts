@@ -1,3 +1,5 @@
+import User from "./user.ts";
+
 export default interface Race {
     id: number;
     name: string;
@@ -7,4 +9,7 @@ export default interface Race {
     valueModifier: number;
     isActive: boolean;
     isFreeOrder: boolean;
+    leagueId: number | null;
+    attendeesCount: number;
+    attendees: User[] | null;
 }

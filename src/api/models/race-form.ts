@@ -7,4 +7,6 @@ export interface RaceForm {
     valueModifier: number;
     isActive: boolean;
     isFreeOrder: boolean;
+    leagueId: number;
+
 }
