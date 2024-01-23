@@ -3,7 +3,6 @@ import {
     DatePicker,
     IComboBox,
     IStackProps,
-    Label,
     PrimaryButton,
     SpinButton,
     Stack,
@@ -156,31 +155,32 @@ export default function ModifyRacePage(): ReactElement {
                         <DatePicker label="Begin Date" value={state.beginDate} onSelectDate={handleDateChange}
                                     isRequired/>
                         <TimePicker label="Begin Hour" value={state.beginHour} onChange={handleTimeChange} required/>
-                        <Dropdown
-                            label="Select League"
-                            placeholder="Choose a league"
-                            options={leagueOptions}
-                            selectedKey={state.leagueId}
-                            onChange={handleLeagueChange}
-                            required
-                            styles={{ dropdown: { maxHeight: 200, overflowY: 'auto' } }}
-                        />
-                    </Stack>
-
-                    <Stack {...columnProps}>
-                    <TextField label="Description" name="description" value={state.description}
-                                   onChange={handleChange}/>
-                        <TextField label="Address" name="startAddress" value={state.startAddress}
-                                   onChange={handleChange}
-                                   required/>
-                        <Label>Modifier</Label>
                         <SpinButton
+                            label="Modifier"
                             defaultValue={state.valueModifier.toString()}
                             min={-2}
                             max={2}
                             step={0.01}
                             onChange={handleValueModifierChange}
                         />
+                    </Stack>
+
+                    <Stack {...columnProps}>
+                    <TextField label="Description" name="description" value={state.description}
+                                   onChange={handleChange}/>
+                    <TextField label="Address" name="startAddress" value={state.startAddress}
+                               onChange={handleChange}
+                               required/>
+                    <Dropdown
+                        label="Select League"
+                        placeholder="Choose a league"
+                        options={leagueOptions}
+                        selectedKey={state.leagueId}
+                        onChange={handleLeagueChange}
+                        required
+                        styles={{ dropdown: { maxHeight: 200, overflowY: 'auto' } }}
+                    />
+
                     </Stack>
                 </Stack>
                 <br/>

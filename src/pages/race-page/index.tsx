@@ -29,7 +29,6 @@ export default function RacePage(): ReactElement {
             Loading...
         </div>
     }
-    console.log(race)
 
     return (
         <div className="race-page">

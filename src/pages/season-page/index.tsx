@@ -43,11 +43,11 @@ export default function LeaguePage(): ReactElement {
                 <div className="league-page-details">
                     <div className="league-detail">
                         <span className="league-detail-key">leagues in league: </span>
-                        <span className="league-detail-value">{"lista wyścigów per liga"}</span>
+                        <span className="league-detail-value">{league.racesCount}</span>
                     </div>
                     <div className="league-detail">
                         <span className="league-detail-key">Attendees:</span>
-                        <span className="league-detail-value">{"123"} {/* Mocked attendees count */}</span>
+                        <span className="league-detail-value">{league.participantsCount}</span>
                     </div>
                     <div className="league-detail">
                         <span className="league-detail-key">Attendess list: </span>
