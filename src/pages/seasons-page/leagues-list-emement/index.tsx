@@ -18,7 +18,11 @@ export default function LeagueListElement({league}: LeagueListElementProps): Rea
                 <div className="league-list-element-name">{league.name}</div>
                 <div className="league-list-element-participants">
                     <FeatherIcon icon="users"/>
-                    {league.id + 23}
+                    {league.participantsCount}
+                </div>
+                <div className="league-list-element-races">
+                    <FeatherIcon icon="flag"/>
+                    {league.racesCount}
                 </div>
             </div>
             <div className="league-list-element-group">

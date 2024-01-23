@@ -3,6 +3,7 @@ import UserLeagueScore from "./models/user-league-score.ts";
 import League from "./models/league.ts";
 import {LeagueForm} from "./models/league-form.ts";
 import LeaderboardEntry from "./models/leaderboard.ts";
+import {getRaces} from "./races.ts";
 
 export async function getUsers(): Promise<User[]> {
     const response = await fetch("/api/users");
@@ -16,12 +17,26 @@ export async function getUsersLeagueScores(): Promise<UserLeagueScore[]> {
 
 export async function getLeagues(): Promise<League[]> {
     const response = await fetch("/api/Leagues");
-    return await response.json()
+    const leagues =  await response.json()
+    const races = await getRaces();
+
+    return leagues.map((league: League) => {
+        const racesForLeague = races.filter(race => race.leagueId === league.id);
+        const racesCount = racesForLeague.length;
+        const participantsCount = racesForLeague.reduce((sum, race) => sum + race.attendeesCount, 0);
+
+        return {
+            ...league,
+            racesCount,
+            participantsCount,
+        };
+    });
 }
 
 export async function getLeague(id: number): Promise<League | null> {
-    const response = await fetch(`/api/Leagues/${id}`);
-    return await response.json()
+    const leagues = await getLeagues();
+    const league = leagues.filter(r => r.id == id);
+    return league.length ? league[0] : null;
 }
 
 export async function addLeague(leagueForm: LeagueForm): Promise<League> {
