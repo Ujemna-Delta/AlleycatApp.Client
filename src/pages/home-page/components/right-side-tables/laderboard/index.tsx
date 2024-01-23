@@ -1,15 +1,21 @@
-import { ReactElement, useState, useEffect } from "react";
+import {ReactElement, useEffect, useState} from "react";
 import '../right-side-tables.css';
-import { getLeaderboardData } from "../../../../../api/users.ts";
+import {getLeaderboardData} from "../../../../../api/users.ts";
 import LeaderboardEntry from "../../../../../api/models/leaderboard.ts";
+import LoadingIcon from "../../../../../components/loading-icon";
 
 export default function LeaderboardTable(): ReactElement {
     const [leaderboardData, setLeaderboardData] = useState<LeaderboardEntry[]>([]);
     const [leagueName, setLeagueName] = useState<string>("");
+    const [isLoading, setIsLoading] = useState<boolean>(false);
+
 
     useEffect(() => {
+        setIsLoading(true);
+
         getLeaderboardData()
             .then((data) => {
+                setIsLoading(false);
                 if (data.length > 0) {
                     setLeagueName(data[1].leagueName);
                     setLeaderboardData(data[1].leaderboard);
@@ -19,6 +25,16 @@ export default function LeaderboardTable(): ReactElement {
                 console.error('Error fetching leaderboard data:', error);
             });
     }, []);
+
+    if (isLoading) {
+        return (
+            <div className="general-container">
+                <div className="container-load">
+                    <LoadingIcon color="black"/>
+                </div>
+            </div>
+        );
+    }
 
     return (
         <div className="general-container">

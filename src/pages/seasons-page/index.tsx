@@ -5,9 +5,11 @@ import League from "../../api/models/league.ts";
 import {getLeagues} from "../../api/users.ts";
 import LeaguesList from "./leagues-list";
 import "./seasons-page.css"
+import LoadingIcon from "../../components/loading-icon";
 
 export default function SeasonsPage(): ReactElement {
     const [leagues, setLeagues] = useState<League[]>([]);
+    const [isLoading, setIsLoading] = useState<boolean>(false);
 
 
     const updateleagues = async () => {
@@ -16,7 +18,10 @@ export default function SeasonsPage(): ReactElement {
     }
 
     useEffect(() => {
-        updateleagues();
+        setIsLoading(true);
+        updateleagues().then(() => {
+            setIsLoading(false);
+        })
     }, []);
 
     return (
@@ -26,7 +31,14 @@ export default function SeasonsPage(): ReactElement {
                     <PrimaryButton text="New"/>
                 </NavLink>
             </div>
-            <LeaguesList leagues={leagues}/>
+
+            {isLoading ? (
+                <div className="page-load">
+                    <LoadingIcon color="black"/>
+                </div>
+            ) : (
+                <LeaguesList leagues={leagues}/>
+            )}
         </div>
     );
 }

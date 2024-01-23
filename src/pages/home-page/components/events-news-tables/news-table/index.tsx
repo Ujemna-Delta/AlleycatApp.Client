@@ -1,10 +1,12 @@
-import { ReactElement, useEffect, useState } from "react";
-import { newsData } from '../../../../../../public/mockData.ts';
+import {ReactElement, useEffect, useState} from "react";
+import {newsData} from '../../../../../../public/mockData.ts';
 import '../events-news-table.css';
+import LoadingIcon from "../../../../../components/loading-icon";
 
 export default function NewsTable(): ReactElement {
     const [timeElapsed, setTimeElapsed] = useState<string[]>([]);
     const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
+    const [isLoading, setIsLoading] = useState<boolean>(false);
 
     // Calculate the time elapsed for each news item
     useEffect(() => {
@@ -28,11 +30,26 @@ export default function NewsTable(): ReactElement {
         };
 
         calculateTimeElapsed();
+
+        setIsLoading(true);
+        setTimeout(() => {
+            setIsLoading(false);
+        }, 250);
     }, []);
 
     const toggleDescription = (index: number) => {
         setExpandedIndex(expandedIndex === index ? null : index);
     };
+
+    if (isLoading) {
+        return (
+            <div className="table-info">
+                <div className="container-load">
+                    <LoadingIcon color="black"/>
+                </div>
+            </div>
+        );
+    }
 
     return (
         <div className="info-table">
@@ -42,7 +59,7 @@ export default function NewsTable(): ReactElement {
                     key={index}
                     onClick={() => toggleDescription(index)}
                 >
-                    <img src={item.imageUrl} alt={item.title} className="info-image" />
+                    <img src={item.imageUrl} alt={item.title} className="info-image"/>
                     <div className="info-content">
                         <div className="info-title-date">
                             <h3 className="info-title">{item.title}</h3>

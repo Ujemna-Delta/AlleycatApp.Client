@@ -1,14 +1,18 @@
-import  { ReactElement, useEffect, useState } from "react";
+import {ReactElement, useEffect, useState} from "react";
 import Race from "../../../../../api/models/race.ts";
-import { getUpcomingRaces } from "../../../../../api/races.ts";
+import {getUpcomingRaces} from "../../../../../api/races.ts";
 import '../right-side-tables.css';
+import LoadingIcon from "../../../../../components/loading-icon";
 
 // Rename the component
 export default function UpcomingRaces(): ReactElement {
     const [upcomingRaces, setUpcomingRaces] = useState<Race[]>([]);
     const [expandedRaceId, setExpandedRaceId] = useState<number | null>(null);
+    const [isLoading, setIsLoading] = useState<boolean>(false);
+
 
     useEffect(() => {
+        setIsLoading(true);
         const fetchUpcomingRaces = async () => {
             try {
                 const upcomingRaces = await getUpcomingRaces();
@@ -18,14 +22,24 @@ export default function UpcomingRaces(): ReactElement {
             }
         };
 
-        fetchUpcomingRaces();
+        fetchUpcomingRaces().then(() => {
+            setIsLoading(false);
+        })
     }, []);
-
-    // console.log(upcomingRaces)
 
     const toggleDescription = (id: number) => {
         setExpandedRaceId(expandedRaceId === id ? null : id);
     };
+
+    if (isLoading) {
+        return (
+            <div className="general-container">
+                <div className="container-load">
+                    <LoadingIcon color="black"/>
+                </div>
+            </div>
+        );
+    }
 
     return (
         <div className="general-container"> {/* Use general container class */}

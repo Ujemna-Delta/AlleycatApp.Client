@@ -3,6 +3,7 @@ import {useParams} from "react-router-dom";
 import "./league-page.css";
 import {getLeague} from "../../api/users.ts";
 import League from "../../api/models/league.ts";
+import LoadingIcon from "../../components/loading-icon";
 
 type LeaguePageParameters = {
     id: string;
@@ -22,9 +23,11 @@ export default function LeaguePage(): ReactElement {
     }, [parameters.id]);
 
     if (league == null) {
-        return <div>
-            Loading...
-        </div>
+        return (
+            <div className="page-load">
+                <LoadingIcon color="black"/>
+            </div>
+        );
     }
 
     return (
@@ -57,5 +60,5 @@ export default function LeaguePage(): ReactElement {
 
             </div>
         </div>
-)
+    )
 }

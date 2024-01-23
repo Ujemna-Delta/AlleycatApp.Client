@@ -5,6 +5,7 @@ import {getRace} from "../../api/races.ts";
 import "./race-page.css";
 import {ERole} from "../../components/protected-view/role.ts";
 import ProtectedView from "../../components/protected-view";
+import LoadingIcon from "../../components/loading-icon";
 
 type RacePageParameters = {
     id: string;
@@ -25,9 +26,11 @@ export default function RacePage(): ReactElement {
     }, [parameters.id]);
 
     if (race == null) {
-        return <div>
-            Loading...
-        </div>
+        return (
+            <div className="page-load">
+                <LoadingIcon color="black"/>
+            </div>
+        );
     }
 
     return (
