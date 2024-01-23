@@ -69,7 +69,7 @@ export default function RacePage(): ReactElement {
                         <span className="race-detail-value">{race.isFreeOrder ? "Yes" : "No"}</span>
                     </div>
                     <div className="race-detail">
-                        <span className="race-detail-key">League ID: </span>
+                        <span className="race-detail-key">League: </span>
                         <NavLink to={`../season/${race.leagueId}`}>
                             <span className="race-detail-value">{race.leagueName ? race.leagueName : "N/A"}</span>
                         </NavLink>
