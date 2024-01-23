@@ -4,6 +4,9 @@ import "./races-list-element.css";
 import {PrimaryButton} from "@fluentui/react";
 import {NavLink} from "react-router-dom";
 import FeatherIcon from "../../../../components/feather-icon";
+import ProtectedView from "../../../../components/protected-view";
+import {ERole} from "../../../../components/protected-view/role.ts";
+import RacesListElementAttendee from "../races-list-element-attendee";
 
 interface RacesListElementProps {
     race: Race
@@ -28,7 +31,11 @@ export default function RacesListElement({race}: RacesListElementProps): ReactEl
                     {race.attendeesCount}
                 </div>
             </div>
-            <div className="races-list-element-group">
+            <div className="races-list-element-group races-list-element-controls">
+                <ProtectedView role={ERole.Attendee}>
+                    <RacesListElementAttendee id={race.id}/>
+                </ProtectedView>
+
                 <NavLink to={`../race/${race.id}`}>
                     <PrimaryButton text="Details"/>
                 </NavLink>

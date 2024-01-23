@@ -40,3 +40,7 @@
 .races-list-element-date .feather {
     top: 0;
 }
+
+.races-list-element-controls > * {
+    margin-left: 8px;
+}

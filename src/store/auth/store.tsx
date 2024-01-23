@@ -6,6 +6,7 @@ import {decodeToken} from "react-jwt";
 const $LOCAL_TOKEN = "token";
 
 interface IToken {
+    nameid: string;
     unique_name: string;
     role: string;
 }
@@ -13,6 +14,7 @@ interface IToken {
 interface AuthState {
     token: string | undefined;
     logout: () => void;
+    userId: () => string;
     userName: () => string;
     getDecoded: () => IToken | undefined;
     getRole: () => string | undefined;
@@ -25,6 +27,21 @@ export const useAuthStore = create<AuthState>((set, get) => ({
             localStorage.removeItem($LOCAL_TOKEN);
             return {token: undefined}
         }),
+    userId: () => {
+        const token = get().token;
+
+        if (token === undefined) {
+            return "Unknown";
+        }
+
+        const decoded = decodeToken<IToken>(token);
+
+        if (decoded === null || decoded === undefined) {
+            return "Unknown";
+        }
+
+        return decoded.nameid;
+    },
     userName: () => {
         const token = get().token;
 

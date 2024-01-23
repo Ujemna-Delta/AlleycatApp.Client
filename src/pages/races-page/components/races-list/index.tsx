@@ -10,7 +10,7 @@ interface RacesListProps {
 export default function RacesList({ races }: RacesListProps): ReactElement {
     return (
         <div className="races-list">
-            {races.map(race => <RacesListElement race={race}/>)}
+            {races.map(race => <RacesListElement key={race.id} race={race}/>)}
         </div>
     )
 }

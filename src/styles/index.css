@@ -49,3 +49,36 @@ body {
     width: calc(100% - 130px);
     padding: 20px;
 }
+
+/* Buttons */
+.btn-green {
+    border-color: #10ac84;
+    background-color: #10ac84;
+}
+
+.btn-green:hover {
+    border-color: #0e9b77;
+    background-color: #0e9b77;
+}
+
+.btn-red {
+    border-color: #ee5253;
+    background-color: #ee5253;
+}
+
+.btn-red:hover {
+    border-color: #d64a4b;
+    background-color: #d64a4b;
+}
+
+/* Page loading */
+.page-load {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 90vh;
+}
+
+.page-load > .loading-icon-container {
+    transform: scale(3);
+}

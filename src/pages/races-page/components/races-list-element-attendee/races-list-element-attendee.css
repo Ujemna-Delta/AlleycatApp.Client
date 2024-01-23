@@ -1,0 +1,14 @@
+.button-frame {
+    display: flex;
+    padding: 0 32px;
+    align-items: center;
+    color: white;
+}
+
+.button-frame:not(.btn-red):not(.btn-green) {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.button-frame .loading-icon-container {
+    transform: scale(0.8);
+}

@@ -16,7 +16,7 @@ export async function getRaces(): Promise<Race[]> {
     return data;
 }
 
-export async function getRaceAttendees(id: number): Promise<User[]| null> {
+export async function getRaceAttendees(id: number): Promise<User[] | null> {
     const response = await fetch(`/api/Races/attendances/race/${id}`);
     return await response.json();
 }
@@ -26,17 +26,53 @@ export async function getRaceAttendeesCount(id: number): Promise<number> {
     return await response.json();
 }
 
+export async function putAttendance(id: number, userId: string): Promise<boolean> {
+    try {
+        const response = await fetch("/api/Races/attendances", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Access-Control-Allow-Origin": "false"
+            },
+            body: JSON.stringify({
+                isConfirmed: true,
+                attendeeId: userId,
+                raceId: id
+            })
+        })
+
+        return response.status == 200;
+    } catch (error) {
+        return false;
+    }
+}
+
+export async function removeAttendance(id: number): Promise<boolean> {
+    try {
+        const response = await fetch(`/api/Races/attendances/${id}`, {
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json",
+                "Access-Control-Allow-Origin": "false"
+            }
+        });
+
+        return response.status == 204;
+    } catch (error) {
+        return false;
+    }
+}
+
 export async function getRace(id: number): Promise<Race | null> {
     const race_t = await fetch(`/api/Races/${id}`);
-    const users = await  getRaceAttendees(id)
-    const usersCount = await  getRaceAttendeesCount(id)
+    const users = await getRaceAttendees(id)
+    const usersCount = await getRaceAttendeesCount(id)
     const race: Race = await race_t.json();
     if (race) {
         let leagueName = ''
         if (race.leagueId) {
             const league = await getLeague(race.leagueId)
-            // @ts-ignore
-            leagueName = league.name
+            leagueName = league!.name
         }
 
         return {
