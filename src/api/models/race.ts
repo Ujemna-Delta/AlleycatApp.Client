@@ -10,6 +10,7 @@ export default interface Race {
     isActive: boolean;
     isFreeOrder: boolean;
     leagueId: number | null;
+    leagueName: string | null;
     attendeesCount: number;
     attendees: User[] | null;
 }

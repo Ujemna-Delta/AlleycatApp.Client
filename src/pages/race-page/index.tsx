@@ -1,5 +1,5 @@
 import {ReactElement, useEffect, useState} from "react";
-import {useParams} from "react-router-dom";
+import {NavLink, useParams} from "react-router-dom";
 import Race from "../../api/models/race.ts";
 import {getRace} from "../../api/races.ts";
 import "./race-page.css";
@@ -70,7 +70,9 @@ export default function RacePage(): ReactElement {
                     </div>
                     <div className="race-detail">
                         <span className="race-detail-key">League ID: </span>
-                        <span className="race-detail-value">{race.leagueId ? race.leagueId : "N/A"}</span>
+                        <NavLink to={`../season/${race.leagueId}`}>
+                            <span className="race-detail-value">{race.leagueName ? race.leagueName : "N/A"}</span>
+                        </NavLink>
                     </div>
                 </div>
                 <ProtectedView role={ERole.Manager}>

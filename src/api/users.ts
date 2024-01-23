@@ -20,9 +20,8 @@ export async function getLeagues(): Promise<League[]> {
 }
 
 export async function getLeague(id: number): Promise<League | null> {
-    const leagues = await getLeagues();
-    const league = leagues.filter(r => r.id == id);
-    return league.length ? league[0] : null;
+    const response = await fetch(`/api/Leagues/${id}`);
+    return await response.json()
 }
 
 export async function addLeague(leagueForm: LeagueForm): Promise<League> {

@@ -2,6 +2,7 @@ import Race from "./models/race.ts";
 import {RaceForm} from "./models/race-form.ts";
 import {mergeDate} from "../utils/mergeDate.ts";
 import User from "./models/user.ts";
+import {getLeague} from "./users.ts";
 
 export async function getRaces(): Promise<Race[]> {
     const response = await fetch("/api/Races");
@@ -31,8 +32,16 @@ export async function getRace(id: number): Promise<Race | null> {
     const usersCount = await  getRaceAttendeesCount(id)
     const race: Race = await race_t.json();
     if (race) {
+        let leagueName = ''
+        if (race.leagueId) {
+            const league = await getLeague(race.leagueId)
+            // @ts-ignore
+            leagueName = league.name
+        }
+
         return {
             ...race,
+            leagueName: leagueName,
             attendees: users,
             attendeesCount: usersCount
         };
