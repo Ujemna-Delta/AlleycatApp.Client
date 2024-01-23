@@ -89,9 +89,6 @@ export default function ModifyLeaguePage(): ReactElement {
                 <Stack tokens={{childrenGap: 50}} styles={{root: {width: 800}}}>
                     <PrimaryButton text="Create" type="submit"/>
                 </Stack>
-                {
-                    JSON.stringify(state)
-                }
             </form>
         </div>
     );

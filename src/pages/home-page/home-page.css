@@ -10,7 +10,7 @@
 .left-side-tables {
     display: flex;
     flex-direction: column;
-    width: 30%;
+    width: 40%;
 }
 
 .right-side-tables {

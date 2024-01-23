@@ -20,9 +20,8 @@ export async function getLeagues(): Promise<League[]> {
 }
 
 export async function getLeague(id: number): Promise<League | null> {
-    const leagues = await getLeagues();
-    const league = leagues.filter(r => r.id == id);
-    return league.length ? league[0] : null;
+    const response = await fetch(`/api/Leagues/${id}`);
+    return await response.json()
 }
 
 export async function addLeague(leagueForm: LeagueForm): Promise<League> {
@@ -81,7 +80,6 @@ export async function getLeaderboardData() {
                 points: score.score,
             };
 
-            // Add the entry to an array for the current league
             if (!leaderboardDataByLeague[leagueName]) {
                 leaderboardDataByLeague[leagueName] = {
                     leagueName,
@@ -92,16 +90,13 @@ export async function getLeaderboardData() {
             }
         }
 
-// Sort the leaderboard entries by points in descending order for each league
         for (const leagueData of Object.values(leaderboardDataByLeague)) {
             leagueData.leaderboard.sort((a, b) => b.points - a.points);
 
-            // Assign ranks to the sorted entries
             leagueData.leaderboard.forEach((entry, index) => {
                 entry.rank = index + 1;
             });
 
-            // Limit the list to the top 5 scores
             leagueData.leaderboard = leagueData.leaderboard.slice(0, 5);
         }
     }

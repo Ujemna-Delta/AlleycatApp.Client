@@ -25,7 +25,7 @@ export default function RacesListElement({race}: RacesListElementProps): ReactEl
                 </div>
                 <div className="races-list-element-participants">
                     <FeatherIcon icon="users"/>
-                    {race.id}
+                    {race.attendeesCount}
                 </div>
             </div>
             <div className="races-list-element-group">
