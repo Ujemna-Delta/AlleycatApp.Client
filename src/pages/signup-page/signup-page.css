@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Teko:wght@400&display=swap');
+
+.signup-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Teko', sans-serif;
+    background: #c9d6ff;
+    background: -webkit-linear-gradient(to right, #c9d6ff, #e2e2e2);
+    background: linear-gradient(to right, #c9d6ff, #e2e2e2);
+    overflow-y: auto;
+}
+
+.signup-page-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 400px;
+    padding: 20px;
+    border-radius: 8px;
+    box-sizing: border-box;
+    box-shadow: 0 0 15px 10px rgba(201, 214, 255, 0.5);
+    font-size: 24px;
+    background: #ebebeb;
+}
+
+.signup-page-title {
+    font-size: 48px;
+    font-weight: bold;
+    padding: 20px;
+}
+
+.signup-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.signup-form input,
+.signup-form button {
+    padding: 8px 24px;
+    margin: 10px 16px;
+    border: 1px solid black;
+    border-radius: 32px;
+    outline: none;
+    color: inherit;
+    font-size: inherit;
+    font-family: inherit;
+    background: inherit;
+    max-width: 95%;
+    box-sizing: border-box
+}
+
+.signup-form input:focus,
+.signup-form button:focus {
+    outline: 5px solid #c9d6ff;
+}
+
+.signup-form button[type=submit] {
+    cursor: pointer;
+    color: white;
+    background: black;
+}
+
+.signup-form button[disabled] {
+    cursor: wait;
+    background: #333;
+}
+
+.signup-change-form {
+    margin-top: 16px;
+    text-align: center;
+    color: inherit;
+    font-size: 0.8em;
+    text-decoration: inherit;
+}

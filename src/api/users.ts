@@ -4,6 +4,7 @@ import League from "./models/league.ts";
 import {LeagueForm} from "./models/league-form.ts";
 import LeaderboardEntry from "./models/leaderboard.ts";
 import {getRaces} from "./races.ts";
+import UserForm from "./models/user-form.ts";
 
 export async function getUsers(): Promise<User[]> {
     const response = await fetch("/api/users");
@@ -118,4 +119,33 @@ export async function getLeaderboardData() {
 
 
     return Object.values(leaderboardDataByLeague);
+}
+
+export async function addUser(userForm: UserForm) {
+    const userToPost = {
+        user:{
+            userName: userForm.userName,
+            firstName: userForm.firstName,
+            lastName: userForm.lastName,
+            nickname: userForm.nickname,
+            marks: userForm.marks
+        },
+        password: userForm.password
+    }
+    console.log(userToPost)
+    const response = await fetch("/api/users/Account/attendee", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "Access-Control-Allow-Origin": "false"
+        },
+
+        body: JSON.stringify(
+            userToPost
+        )
+    });
+
+    if (response.status != 204) {
+        throw new Error(response.statusText);
+    }
 }
