@@ -10,6 +10,7 @@ import LogoutRoute from "./logout.tsx";
 import SeasonsRoute from "./seasons.tsx";
 import SeasonRoute from "./season.tsx";
 import ModifyLeaguePage from "../pages/modify-league-page";
+import SignupRoute from "./signup.tsx";
 
 export const routes = [
     {
@@ -54,6 +55,10 @@ export const routes = [
     {
         path: "/login",
         element: <LoginRoute/>
+    },
+    {
+        path: "/signup",
+        element: <SignupRoute/>
     },
     {
         path: "/logout",

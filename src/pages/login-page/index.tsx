@@ -23,6 +23,7 @@ export default function LoginPage(): ReactElement {
     }
 
     const handleSubmit = (event: FormEvent) => {
+        console.log(formState)
         event.preventDefault();
         useAuthRequest.action(formState);
     }
@@ -52,7 +53,7 @@ export default function LoginPage(): ReactElement {
                     {status == "error" && "Error"}
 
                     <NavLink to="/signup" className="login-change-form">
-                        Or Sign up
+                        Don't have an account?  Sign Up
                     </NavLink>
                 </form>
             </div>
